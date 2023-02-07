@@ -287,6 +287,7 @@ time, mark, audio, video {
     font-size: 100%;
     margin: 0;
     /*padding: 0;*/
+    
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -296,7 +297,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	/*line-height: 1;*/
-
+font-family: "Bunken Tech Sans SC Wide W01Bd" !important;
 }
 a
 blockquote, q {
@@ -347,27 +348,31 @@ input[type='checkbox'] { cursor: pointer; }
 body {	
 	font-size: 14px;
 	color: #fff;
-	font-family: "Open Sans", sans-serif;
+	font-family: "Bunken Tech Sans SC Wide W01Bd";
 	text-rendering: optimizeLegibility;
 }
 
 a { 
 	color: <?=$textcolor1?>;
 	text-decoration: none;
+    font-family: "Bunken Tech Sans SC Wide W01Bd";
 }
 
 a:active,
 a.bbcode-href:active { 
 	color: <?=$textcolor2?>;
+    font-family: "Bunken Tech Sans SC Wide W01Bd";
 }
 
 a:hover,
 a.bbcode-href:hover { 
 	color: <?=$textcolor2?>;
+    font-family: "Bunken Tech Sans SC Wide W01Bd";
 }
 
 a.bbcode-href {
 	color: <?=$textcolor1?>;
+    font-family: "Bunken Tech Sans SC Wide W01Bd";
 }
 
 /*
@@ -377,7 +382,7 @@ a.bbcode-href {
 textarea, select, input {
 	background-color: <?=$bgcolor5?>;
 	color: #fff;
-	font-family: "Open Sans", sans-serif;
+	font-family: "Bunken Tech Sans SC Wide W01Bd" !important;
 	letter-spacing: 0px;
 	margin: 0px 1px 1px;
 	padding: 4px;

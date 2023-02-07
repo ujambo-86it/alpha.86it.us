@@ -120,16 +120,7 @@ function head()
     echo "\n\n<!-- END uploadcare -->\n\n";
 	# START uploadcare PLUGIN for CKeditor 4 - 09/07/2019
 
-    # FlyKit Mod v1.0.0 START
-	# used to add rounded corners to user avatars!
-	addPHPCSSToHead(NUKE_BASE_DIR.'includes/css/cms_css.php','file');
-    # FlyKit Mod v1.0.0 END
 
-    # START Load current theme. - 09/07/2019
-    echo "\n\n<!-- START Load current theme. -->\n\n";
-    include_once(NUKE_THEMES_DIR.$ThemeSel.'/theme.php');
-    echo "\n\n<!-- END Load current theme. -->\n\n";
-	# START Load current theme. - 09/07/2019
 
     echo "\n\n<!-- START Load favicon. -->\n\n";
     if ((($favicon = $cache->load('favicon', 'config')) === false) || empty($favicon)): 
@@ -181,17 +172,39 @@ function head()
     endif;
     echo "\n<!-- END custom_head -->\n\n";
     */
-    
+    echo '<style type="text/css" rel="preload">';
+    echo '@font-face {';
+    echo 'font-family: "Bunken Tech Sans SC Wide W01Bd";';
+    echo 'font-display: auto;';
+    echo '  src: url("'.NUKE_THEMES_DIR.$ThemeSel.'/webfonts/bdb331a84d748f28a070901d0421af38.eot");'; /* IE9*/
+    echo '  src: url("'.NUKE_THEMES_DIR.$ThemeSel.'/webfonts/bdb331a84d748f28a070901d0421af38.eot?#iefix") format("embedded-opentype"),'; /* IE6-IE8 */
+    echo '  url("'.NUKE_THEMES_DIR.$ThemeSel.'/webfonts/bdb331a84d748f28a070901d0421af38.woff2") format("woff2"),'; /* chrome、firefox */
+    echo '  url("'.NUKE_THEMES_DIR.$ThemeSel.'/webfonts/bdb331a84d748f28a070901d0421af38.woff") format("woff"),'; /* chrome、firefox */
+    echo '  url("'.NUKE_THEMES_DIR.$ThemeSel.'/webfonts/bdb331a84d748f28a070901d0421af38.ttf") format("truetype"),'; /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    echo '  url("'.NUKE_THEMES_DIR.$ThemeSel.'/webfonts/bdb331a84d748f28a070901d0421af38.svg#Bunken Tech Sans SC Wide W01Bd") format("svg");'; /* iOS 4.1- */
+    echo '  unicode-range: U+000-5FF;';
+    echo '}';
+    echo '</style>';
 	/* ----- as you can probably tell this is used for IE compatibility ----- */
     echo '<!--[if lt IE 9]><script src="includes/js/scripts/html5shiv.min.js"></script><![endif]-->'."\n";
     echo "</head>\n";
     echo "\n<!-- END </head> -->\n\n";
 	echo "\n<!-- START Top Primary Body Tags -->\n";
+
+    # FlyKit Mod v1.0.0 START
+	# used to add rounded corners to user avatars!
+	addPHPCSSToHead(NUKE_BASE_DIR.'includes/css/cms_css.php','file');
+    # FlyKit Mod v1.0.0 END
+
+    # START Load current theme. - 09/07/2019
+    echo "\n\n<!-- START Load current theme. -->\n\n";
+    include_once(NUKE_THEMES_DIR.$ThemeSel.'/theme.php');
+    echo "\n\n<!-- END Load current theme. -->\n\n";
+	# START Load current theme. - 09/07/2019
 	echo "<html>\n";
 	echo "<body>\n";
-	echo "<!-- END Top Primary Body Tags -->\n\n";
-
-    themeheader();
+	echo "<!-- END Top Primary Body Tags -->\n\n";    
+	themeheader();
 
 	// used for class ckeditor
 	if(isset($modheader)) 
